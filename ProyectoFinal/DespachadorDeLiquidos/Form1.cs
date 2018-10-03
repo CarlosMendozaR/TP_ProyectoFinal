@@ -26,8 +26,38 @@ namespace DespachadorDeLiquidos
         private void cmbBebida_SelectedIndexChanged(object sender, EventArgs e)
         {
             nuevaBebida = (Bebida)ListaDeBebidas[cmbBebida.SelectedIndex];
-            //Esta parte podemos hacerla un método
             gpbPorcion.Text = nuevaBebida.Alcohol;
+            Ingredientes();
+
+        }
+        private void cmbBebida_Preparado(object sender, EventArgs e)
+        {
+            rdbCombinado.Checked = true;
+        }
+
+
+        private void rdbCombinado_CheckedChanged(object sender, EventArgs e)
+        {
+
+            MostrarParaCombinado();
+        }
+        private void rdbSoloHielo_CheckedChanged(object sender, EventArgs e)
+        {
+            MostrarParaHielos();
+        }
+        private void rdbShot_CheckedChanged(object sender, EventArgs e)
+        {
+            MostrarParaShot();
+        }
+        private void rdbPersonalizado_CheckedChanged(object sender, EventArgs e)
+        {
+            MostrarParaPersonalizado();
+        }
+        #endregion
+
+        #region Métodos
+        public void Ingredientes()
+        {
             lbAlcohol.Text = nuevaBebida.Alcohol;
             lbRefresco.Text = nuevaBebida.Refresco;
             lbAlcohol.Visible = true;
@@ -37,8 +67,9 @@ namespace DespachadorDeLiquidos
             lbMas1.Visible = true;
             lbMas2.Visible = true;
             lbMas3.Visible = true;
-
-            /*Para personalizado
+        }
+        public void MostrarParaPersonalizado()
+        {
             label8.Visible = true;
             label4.Visible = true;
             label5.Visible = true;
@@ -47,9 +78,10 @@ namespace DespachadorDeLiquidos
             txtbAlcohol.Visible = true;
             txtbRefresco.Visible = true;
             txtbAguaMineral.Visible = true;
-            txtbHielos.Visible = true;*/
-
-            /*Para Combinado
+            txtbHielos.Visible = true;
+        }
+        public void MostrarParaCombinado()
+        {
             label3.Visible = true;
             label4.Visible = true;
             label5.Visible = true;
@@ -59,21 +91,19 @@ namespace DespachadorDeLiquidos
             txtbAlcohol.Visible = true;
             txtbRefresco.Visible = true;
             txtbAguaMineral.Visible = true;
-            txtbHielos.Visible = true;*/
-
-            /*Para solo hielos
+            txtbHielos.Visible = true;
+        }
+        public void MostrarParaHielos()
+        {
             label7.Visible = true;
             txtbHielos.Visible = true;
-            label7.Location = new Point(65,94);
-            txtbHielos.Location = new Point(190, 91);*/
-
-            /*Para shot
-            label4.Visible = true;
-            txtbAlcohol.Visible = true;*/
+            label7.Location = new Point(65, 94);
+            txtbHielos.Location = new Point(190, 91);
         }
-        private void cmbBebida_Preparado(object sender, EventArgs e)
+        public void MostrarParaShot()
         {
-            rdbCombinado.Checked = true;
+            label4.Visible = true;
+            txtbAlcohol.Visible = true;
         }
         #endregion
 

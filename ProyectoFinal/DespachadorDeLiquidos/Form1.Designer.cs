@@ -92,6 +92,7 @@
             this.rdbPersonalizado.TabStop = true;
             this.rdbPersonalizado.Text = "Personalizado";
             this.rdbPersonalizado.UseVisualStyleBackColor = true;
+            this.rdbPersonalizado.CheckedChanged += new System.EventHandler(this.rdbPersonalizado_CheckedChanged);
             // 
             // rdbShot
             // 
@@ -103,6 +104,7 @@
             this.rdbShot.TabStop = true;
             this.rdbShot.Text = "Shot";
             this.rdbShot.UseVisualStyleBackColor = true;
+            this.rdbShot.CheckedChanged += new System.EventHandler(this.rdbShot_CheckedChanged);
             // 
             // rdbSoloHielo
             // 
@@ -114,6 +116,7 @@
             this.rdbSoloHielo.TabStop = true;
             this.rdbSoloHielo.Text = "Solo hielo";
             this.rdbSoloHielo.UseVisualStyleBackColor = true;
+            this.rdbSoloHielo.CheckedChanged += new System.EventHandler(this.rdbSoloHielo_CheckedChanged);
             // 
             // rdbCombinado
             // 
@@ -125,6 +128,7 @@
             this.rdbCombinado.TabStop = true;
             this.rdbCombinado.Text = "Combinado";
             this.rdbCombinado.UseVisualStyleBackColor = true;
+            this.rdbCombinado.CheckedChanged += new System.EventHandler(this.rdbCombinado_CheckedChanged);
             // 
             // label2
             // 
