@@ -55,6 +55,8 @@
             this.txtbRefresco = new System.Windows.Forms.TextBox();
             this.txtbAlcohol = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cmbShot = new System.Windows.Forms.ComboBox();
             this.gpbMenu.SuspendLayout();
             this.gpbPorcion.SuspendLayout();
             this.SuspendLayout();
@@ -237,6 +239,8 @@
             // 
             // gpbPorcion
             // 
+            this.gpbPorcion.Controls.Add(this.cmbShot);
+            this.gpbPorcion.Controls.Add(this.label9);
             this.gpbPorcion.Controls.Add(this.label8);
             this.gpbPorcion.Controls.Add(this.cmbPorcion);
             this.gpbPorcion.Controls.Add(this.txtbHielos);
@@ -356,6 +360,25 @@
             this.label3.Text = "Porción";
             this.label3.Visible = false;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(24, 150);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(199, 17);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "O elige cómo quieres tu trago:";
+            this.label9.Visible = false;
+            // 
+            // cmbShot
+            // 
+            this.cmbShot.FormattingEnabled = true;
+            this.cmbShot.Location = new System.Drawing.Point(190, 175);
+            this.cmbShot.Name = "cmbShot";
+            this.cmbShot.Size = new System.Drawing.Size(100, 24);
+            this.cmbShot.TabIndex = 10;
+            this.cmbShot.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -402,6 +425,8 @@
         private System.Windows.Forms.Label lbMas1;
         private System.Windows.Forms.Label lbAlcohol;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cmbShot;
     }
 }
 

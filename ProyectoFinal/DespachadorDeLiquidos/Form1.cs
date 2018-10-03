@@ -10,6 +10,7 @@ namespace DespachadorDeLiquidos
         Bebida nuevaBebida;
         ArrayList ListaDeBebidas;
 
+        #region Constructor
         public Form1()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace DespachadorDeLiquidos
             }
 
         }
+        #endregion
 
         #region Eventos
         private void cmbBebida_SelectedIndexChanged(object sender, EventArgs e)
@@ -105,8 +107,10 @@ namespace DespachadorDeLiquidos
         }
         public void MostrarParaShot()
         {
+            label9.Visible = true;
             label8.Visible = true;
             label4.Visible = true;
+            cmbShot.Visible = true;
             txtbAlcohol.Visible = true; txtbAlcohol.Enabled = true;
         }
 
@@ -117,6 +121,7 @@ namespace DespachadorDeLiquidos
                 if (cont is TextBox)
                 {
                     ((TextBox)cont).Visible = false;
+                    ((TextBox)cont).Text = "";
                 }
                 if (cont is Label)
                 {
