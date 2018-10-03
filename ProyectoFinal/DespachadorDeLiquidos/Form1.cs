@@ -13,12 +13,36 @@ namespace DespachadorDeLiquidos
         {
             InitializeComponent();
             ListaDeBebidas = new ArrayList();
-            ListaDeBebidas.Add(new Bebida());
+            ListaDeBebidas.Add(new Bebida("Ron Blanco", "Coca Cola", -1, -1, -1, 5));
+            ListaDeBebidas.Add(new Bebida("Tequila", "Squirt", -1, -1, -1, 2));
+            foreach (Bebida copa in ListaDeBebidas)
+            {
+                cmbBebida.Items.Add(copa.Alcohol);
+            }
         }
 
-        private void rdbCuba_CheckedChanged(object sender, EventArgs e)
-        {
+        #region Eventos
 
+        #endregion
+        private void cmbBebida_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nuevaBebida = (Bebida)ListaDeBebidas[cmbBebida.SelectedIndex];
+
+            //Esta parte podemos hacerla un método
+            gpbPorcion.Text = nuevaBebida.Alcohol;
+            lbAlcohol.Text = nuevaBebida.Alcohol;
+            lbRefresco.Text = nuevaBebida.Refresco;
+            lbAlcohol.Visible = true;
+            lbRefresco.Visible = true;
+            lbAgua.Visible = true;
+            lbHielo.Visible = true;
+            lbMas1.Visible = true;
+            lbMas2.Visible = true;
+            lbMas3.Visible = true;
+        }
+        private void cmbBebida_Preparado(object sender, EventArgs e)
+        {
+            rdbPreparado.Checked = true;
         }
     }
 }
