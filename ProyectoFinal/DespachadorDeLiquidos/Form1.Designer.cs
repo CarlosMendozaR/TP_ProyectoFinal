@@ -54,6 +54,7 @@
             this.lbAgua = new System.Windows.Forms.Label();
             this.lbMas3 = new System.Windows.Forms.Label();
             this.lbHielo = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.gpbMenu.SuspendLayout();
             this.gpbPorcion.SuspendLayout();
             this.SuspendLayout();
@@ -155,6 +156,7 @@
             // 
             // gpbPorcion
             // 
+            this.gpbPorcion.Controls.Add(this.label8);
             this.gpbPorcion.Controls.Add(this.cmbPorcion);
             this.gpbPorcion.Controls.Add(this.txtbHielos);
             this.gpbPorcion.Controls.Add(this.label7);
@@ -179,6 +181,7 @@
             this.cmbPorcion.Name = "cmbPorcion";
             this.cmbPorcion.Size = new System.Drawing.Size(169, 24);
             this.cmbPorcion.TabIndex = 7;
+            this.cmbPorcion.Visible = false;
             // 
             // txtbHielos
             // 
@@ -187,6 +190,7 @@
             this.txtbHielos.Name = "txtbHielos";
             this.txtbHielos.Size = new System.Drawing.Size(100, 22);
             this.txtbHielos.TabIndex = 2;
+            this.txtbHielos.Visible = false;
             // 
             // label7
             // 
@@ -196,6 +200,7 @@
             this.label7.Size = new System.Drawing.Size(47, 17);
             this.label7.TabIndex = 6;
             this.label7.Text = "Hielos";
+            this.label7.Visible = false;
             // 
             // label6
             // 
@@ -205,6 +210,7 @@
             this.label6.Size = new System.Drawing.Size(91, 17);
             this.label6.TabIndex = 5;
             this.label6.Text = "Agua Mineral";
+            this.label6.Visible = false;
             // 
             // label5
             // 
@@ -214,6 +220,7 @@
             this.label5.Size = new System.Drawing.Size(65, 17);
             this.label5.TabIndex = 4;
             this.label5.Text = "Refresco";
+            this.label5.Visible = false;
             // 
             // label4
             // 
@@ -223,6 +230,7 @@
             this.label4.Size = new System.Drawing.Size(54, 17);
             this.label4.TabIndex = 1;
             this.label4.Text = "Alcohol";
+            this.label4.Visible = false;
             // 
             // txtbAguaMineral
             // 
@@ -231,6 +239,7 @@
             this.txtbAguaMineral.Name = "txtbAguaMineral";
             this.txtbAguaMineral.Size = new System.Drawing.Size(100, 22);
             this.txtbAguaMineral.TabIndex = 3;
+            this.txtbAguaMineral.Visible = false;
             // 
             // txtbRefresco
             // 
@@ -239,6 +248,7 @@
             this.txtbRefresco.Name = "txtbRefresco";
             this.txtbRefresco.Size = new System.Drawing.Size(100, 22);
             this.txtbRefresco.TabIndex = 2;
+            this.txtbRefresco.Visible = false;
             // 
             // txtbAlcohol
             // 
@@ -247,6 +257,7 @@
             this.txtbAlcohol.Name = "txtbAlcohol";
             this.txtbAlcohol.Size = new System.Drawing.Size(100, 22);
             this.txtbAlcohol.TabIndex = 1;
+            this.txtbAlcohol.Visible = false;
             // 
             // label3
             // 
@@ -256,11 +267,12 @@
             this.label3.Size = new System.Drawing.Size(56, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "Porción";
+            this.label3.Visible = false;
             // 
             // lbAlcohol
             // 
             this.lbAlcohol.AutoSize = true;
-            this.lbAlcohol.Location = new System.Drawing.Point(72, 107);
+            this.lbAlcohol.Location = new System.Drawing.Point(77, 104);
             this.lbAlcohol.Name = "lbAlcohol";
             this.lbAlcohol.Size = new System.Drawing.Size(65, 17);
             this.lbAlcohol.TabIndex = 7;
@@ -282,7 +294,7 @@
             // lbRefresco
             // 
             this.lbRefresco.AutoSize = true;
-            this.lbRefresco.Location = new System.Drawing.Point(75, 141);
+            this.lbRefresco.Location = new System.Drawing.Point(77, 141);
             this.lbRefresco.Name = "lbRefresco";
             this.lbRefresco.Size = new System.Drawing.Size(76, 17);
             this.lbRefresco.TabIndex = 9;
@@ -334,6 +346,16 @@
             this.lbHielo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbHielo.Visible = false;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(25, 43);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(304, 17);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Ingresa en cada casilla la cantidad que desees";
+            this.label8.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -379,6 +401,7 @@
         private System.Windows.Forms.Label lbRefresco;
         private System.Windows.Forms.Label lbMas1;
         private System.Windows.Forms.Label lbAlcohol;
+        private System.Windows.Forms.Label label8;
     }
 }
 
