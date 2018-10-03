@@ -42,7 +42,7 @@ namespace DespachadorDeLiquidos
         }
         private void cmbBebida_Preparado(object sender, EventArgs e)
         {
-            rdbPreparado.Checked = true;
+            rdbCombinado.Checked = true;
         }
     }
 }

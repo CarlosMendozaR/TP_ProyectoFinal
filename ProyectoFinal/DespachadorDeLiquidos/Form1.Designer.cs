@@ -32,7 +32,7 @@
             this.rdbPersonalizado = new System.Windows.Forms.RadioButton();
             this.rdbShot = new System.Windows.Forms.RadioButton();
             this.rdbSoloHielo = new System.Windows.Forms.RadioButton();
-            this.rdbPreparado = new System.Windows.Forms.RadioButton();
+            this.rdbCombinado = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbBebida = new System.Windows.Forms.ComboBox();
@@ -70,7 +70,7 @@
             this.gpbMenu.Controls.Add(this.rdbPersonalizado);
             this.gpbMenu.Controls.Add(this.rdbShot);
             this.gpbMenu.Controls.Add(this.rdbSoloHielo);
-            this.gpbMenu.Controls.Add(this.rdbPreparado);
+            this.gpbMenu.Controls.Add(this.rdbCombinado);
             this.gpbMenu.Controls.Add(this.label2);
             this.gpbMenu.Controls.Add(this.label1);
             this.gpbMenu.Controls.Add(this.cmbBebida);
@@ -114,16 +114,16 @@
             this.rdbSoloHielo.Text = "Solo hielo";
             this.rdbSoloHielo.UseVisualStyleBackColor = true;
             // 
-            // rdbPreparado
+            // rdbCombinado
             // 
-            this.rdbPreparado.AutoSize = true;
-            this.rdbPreparado.Location = new System.Drawing.Point(289, 66);
-            this.rdbPreparado.Name = "rdbPreparado";
-            this.rdbPreparado.Size = new System.Drawing.Size(96, 21);
-            this.rdbPreparado.TabIndex = 3;
-            this.rdbPreparado.TabStop = true;
-            this.rdbPreparado.Text = "Preparado";
-            this.rdbPreparado.UseVisualStyleBackColor = true;
+            this.rdbCombinado.AutoSize = true;
+            this.rdbCombinado.Location = new System.Drawing.Point(289, 66);
+            this.rdbCombinado.Name = "rdbCombinado";
+            this.rdbCombinado.Size = new System.Drawing.Size(100, 21);
+            this.rdbCombinado.TabIndex = 3;
+            this.rdbCombinado.TabStop = true;
+            this.rdbCombinado.Text = "Combinado";
+            this.rdbCombinado.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -260,7 +260,7 @@
             // lbAlcohol
             // 
             this.lbAlcohol.AutoSize = true;
-            this.lbAlcohol.Location = new System.Drawing.Point(76, 107);
+            this.lbAlcohol.Location = new System.Drawing.Point(72, 107);
             this.lbAlcohol.Name = "lbAlcohol";
             this.lbAlcohol.Size = new System.Drawing.Size(65, 17);
             this.lbAlcohol.TabIndex = 7;
@@ -282,7 +282,7 @@
             // lbRefresco
             // 
             this.lbRefresco.AutoSize = true;
-            this.lbRefresco.Location = new System.Drawing.Point(73, 141);
+            this.lbRefresco.Location = new System.Drawing.Point(75, 141);
             this.lbRefresco.Name = "lbRefresco";
             this.lbRefresco.Size = new System.Drawing.Size(76, 17);
             this.lbRefresco.TabIndex = 9;
@@ -357,7 +357,7 @@
         private System.Windows.Forms.RadioButton rdbPersonalizado;
         private System.Windows.Forms.RadioButton rdbShot;
         private System.Windows.Forms.RadioButton rdbSoloHielo;
-        private System.Windows.Forms.RadioButton rdbPreparado;
+        private System.Windows.Forms.RadioButton rdbCombinado;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbBebida;
