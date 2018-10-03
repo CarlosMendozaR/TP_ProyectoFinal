@@ -103,6 +103,7 @@
             this.rdbCuba.TabStop = true;
             this.rdbCuba.Text = "Cuba";
             this.rdbCuba.UseVisualStyleBackColor = true;
+            this.rdbCuba.CheckedChanged += new System.EventHandler(this.rdbCuba_CheckedChanged);
             // 
             // rdbSoloHielo
             // 

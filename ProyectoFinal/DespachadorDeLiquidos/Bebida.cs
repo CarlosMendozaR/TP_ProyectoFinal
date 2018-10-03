@@ -78,5 +78,17 @@ namespace DespachadorDeLiquidos
             }
         }
         #endregion
+
+        #region Constructor
+        public Bebida(string alcohol, string refresco, int cantidadAlcohol, int cantidadRefresco, int cantidadAgua, byte hielos)
+        {
+            Alcohol = alcohol;
+            Refresco = refresco;
+            CantidadAlcohol = cantidadAlcohol;
+            CantidadRefresco = cantidadRefresco;
+            CantidadAgua = cantidadAgua;
+            Hielos = hielos;
+        }
+        #endregion
     }
 }
