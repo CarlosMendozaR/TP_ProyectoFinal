@@ -20,6 +20,7 @@ namespace DespachadorDeLiquidos
             {
                 cmbBebida.Items.Add(copa.Alcohol);
             }
+
         }
 
         #region Eventos
@@ -38,19 +39,22 @@ namespace DespachadorDeLiquidos
 
         private void rdbCombinado_CheckedChanged(object sender, EventArgs e)
         {
-
+            DesaparecerControles();
             MostrarParaCombinado();
         }
         private void rdbSoloHielo_CheckedChanged(object sender, EventArgs e)
         {
+            DesaparecerControles();
             MostrarParaHielos();
         }
         private void rdbShot_CheckedChanged(object sender, EventArgs e)
         {
+            DesaparecerControles();
             MostrarParaShot();
         }
         private void rdbPersonalizado_CheckedChanged(object sender, EventArgs e)
         {
+            DesaparecerControles();
             MostrarParaPersonalizado();
         }
         #endregion
@@ -71,14 +75,14 @@ namespace DespachadorDeLiquidos
         public void MostrarParaPersonalizado()
         {
             label8.Visible = true;
-            label4.Visible = true;
+            label4.Visible = true; 
             label5.Visible = true;
             label6.Visible = true;
-            label7.Visible = true;
-            txtbAlcohol.Visible = true;
-            txtbRefresco.Visible = true;
-            txtbAguaMineral.Visible = true;
-            txtbHielos.Visible = true;
+            label7.Visible = true; label7.Location = new Point(49, 144);
+            txtbAlcohol.Visible = true; txtbAlcohol.Enabled = true;
+            txtbRefresco.Visible = true; txtbRefresco.Enabled = true;
+            txtbAguaMineral.Visible = true; txtbAguaMineral.Enabled = true;
+            txtbHielos.Visible = true; txtbHielos.Enabled = true; txtbHielos.Location = new Point(142, 142);
         }
         public void MostrarParaCombinado()
         {
@@ -86,24 +90,43 @@ namespace DespachadorDeLiquidos
             label4.Visible = true;
             label5.Visible = true;
             label6.Visible = true;
-            label7.Visible = true;
+            label7.Visible = true; label7.Location = new Point(49, 144);
             cmbPorcion.Visible = true;
-            txtbAlcohol.Visible = true;
-            txtbRefresco.Visible = true;
-            txtbAguaMineral.Visible = true;
-            txtbHielos.Visible = true;
+            txtbAlcohol.Visible = true; txtbAlcohol.Enabled = false;
+            txtbRefresco.Visible = true; txtbRefresco.Enabled = false;
+            txtbAguaMineral.Visible = true; txtbAguaMineral.Enabled = false;
+            txtbHielos.Visible = true; txtbHielos.Enabled = false; txtbHielos.Location = new Point(142, 142);
         }
         public void MostrarParaHielos()
-        {
-            label7.Visible = true;
-            txtbHielos.Visible = true;
-            label7.Location = new Point(65, 94);
-            txtbHielos.Location = new Point(190, 91);
+        { 
+            label8.Visible=true;
+            label7.Visible = true; label7.Location = new Point(49, 76);
+            txtbHielos.Visible = true; txtbHielos.Enabled = true; txtbHielos.Location = new Point(142, 74);
         }
         public void MostrarParaShot()
         {
+            label8.Visible = true;
             label4.Visible = true;
-            txtbAlcohol.Visible = true;
+            txtbAlcohol.Visible = true; txtbAlcohol.Enabled = true;
+        }
+
+        public void DesaparecerControles()
+        {
+            foreach (Control cont in gpbPorcion.Controls)
+            {
+                if (cont is TextBox)
+                {
+                    ((TextBox)cont).Visible = false;
+                }
+                if (cont is Label)
+                {
+                    ((Label)cont).Visible = false;
+                }
+                if(cont is ComboBox)
+                {
+                    ((ComboBox)cont).Visible = false;
+                }
+            }
         }
         #endregion
 
