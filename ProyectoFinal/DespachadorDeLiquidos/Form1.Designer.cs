@@ -55,8 +55,7 @@
             this.txtbRefresco = new System.Windows.Forms.TextBox();
             this.txtbAlcohol = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cmbShot = new System.Windows.Forms.ComboBox();
+            this.btnServir = new System.Windows.Forms.Button();
             this.gpbMenu.SuspendLayout();
             this.gpbPorcion.SuspendLayout();
             this.SuspendLayout();
@@ -239,8 +238,6 @@
             // 
             // gpbPorcion
             // 
-            this.gpbPorcion.Controls.Add(this.cmbShot);
-            this.gpbPorcion.Controls.Add(this.label9);
             this.gpbPorcion.Controls.Add(this.label8);
             this.gpbPorcion.Controls.Add(this.cmbPorcion);
             this.gpbPorcion.Controls.Add(this.txtbHielos);
@@ -264,9 +261,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(25, 43);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(206, 17);
+            this.label8.Size = new System.Drawing.Size(232, 17);
             this.label8.TabIndex = 8;
-            this.label8.Text = "Ingresa la cantidad que desees";
+            this.label8.Text = "Ingresa la cantidad que desees [ml]";
             this.label8.Visible = false;
             // 
             // cmbPorcion
@@ -277,6 +274,7 @@
             this.cmbPorcion.Size = new System.Drawing.Size(169, 24);
             this.cmbPorcion.TabIndex = 7;
             this.cmbPorcion.Visible = false;
+            this.cmbPorcion.SelectedIndexChanged += new System.EventHandler(this.cmbPorcion_SelectedIndexChanged);
             // 
             // txtbHielos
             // 
@@ -360,30 +358,23 @@
             this.label3.Text = "Porción";
             this.label3.Visible = false;
             // 
-            // label9
+            // btnServir
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(24, 150);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(199, 17);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "O elige cómo quieres tu trago:";
-            this.label9.Visible = false;
-            // 
-            // cmbShot
-            // 
-            this.cmbShot.FormattingEnabled = true;
-            this.cmbShot.Location = new System.Drawing.Point(190, 175);
-            this.cmbShot.Name = "cmbShot";
-            this.cmbShot.Size = new System.Drawing.Size(100, 24);
-            this.cmbShot.TabIndex = 10;
-            this.cmbShot.Visible = false;
+            this.btnServir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnServir.Location = new System.Drawing.Point(445, 330);
+            this.btnServir.Name = "btnServir";
+            this.btnServir.Size = new System.Drawing.Size(343, 79);
+            this.btnServir.TabIndex = 2;
+            this.btnServir.Text = "Servir bebida";
+            this.btnServir.UseVisualStyleBackColor = true;
+            this.btnServir.Click += new System.EventHandler(this.btnServir_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(890, 556);
+            this.Controls.Add(this.btnServir);
             this.Controls.Add(this.gpbPorcion);
             this.Controls.Add(this.gpbMenu);
             this.Name = "Form1";
@@ -425,8 +416,7 @@
         private System.Windows.Forms.Label lbMas1;
         private System.Windows.Forms.Label lbAlcohol;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cmbShot;
+        private System.Windows.Forms.Button btnServir;
     }
 }
 

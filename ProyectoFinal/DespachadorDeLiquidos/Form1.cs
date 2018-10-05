@@ -9,6 +9,7 @@ namespace DespachadorDeLiquidos
     {
         Bebida nuevaBebida;
         ArrayList ListaDeBebidas;
+        string[] porciones = {"10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%"};
 
         #region Constructor
         public Form1()
@@ -21,7 +22,8 @@ namespace DespachadorDeLiquidos
             {
                 cmbBebida.Items.Add(copa.Alcohol);
             }
-
+            foreach (string item in porciones)
+                cmbPorcion.Items.Add(item);
         }
         #endregion
 
@@ -59,6 +61,33 @@ namespace DespachadorDeLiquidos
             DesaparecerControles();
             MostrarParaPersonalizado();
         }
+        private void cmbPorcion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtbAlcohol.Text = ((cmbPorcion.SelectedIndex + 1)*10).ToString();
+            txtbAguaMineral.Text = "0";
+            txtbRefresco.Text = (100 - int.Parse(txtbAlcohol.Text)).ToString();
+            txtbHielos.Text = "4";
+        }
+        private void btnServir_Click(object sender, EventArgs e)
+        {
+            if (rdbCombinado.Checked)
+            {
+                Bebida cubebibi = new Bebida(nuevaBebida.Alcohol, nuevaBebida.Refresco, int.Parse(txtbAlcohol.Text), int.Parse(txtbRefresco.Text), int.Parse(txtbAguaMineral.Text), byte.Parse(txtbHielos.Text));
+            }
+            else if (rdbSoloHielo.Checked)
+            {
+                Bebida aLasRocas = new Bebida(nuevaBebida.Alcohol, "Sin refresco", 100, 0, 0, byte.Parse(txtbHielos.Text));
+            }
+            else if (rdbShot.Checked)
+            {
+                Bebida shot = new Bebida(nuevaBebida.Alcohol, "Sin refresco", int.Parse(txtbAlcohol.Text), 0, 0, 0);
+            }
+            else if (rdbPersonalizado.Checked)
+            {
+                Bebida personalizada = new Bebida(nuevaBebida.Alcohol, nuevaBebida.Refresco, int.Parse(txtbAlcohol.Text), int.Parse(txtbRefresco.Text), int.Parse(txtbAguaMineral.Text), byte.Parse(txtbHielos.Text));
+            }
+        }
+
         #endregion
 
         #region Métodos
@@ -107,10 +136,8 @@ namespace DespachadorDeLiquidos
         }
         public void MostrarParaShot()
         {
-            label9.Visible = true;
             label8.Visible = true;
             label4.Visible = true;
-            cmbShot.Visible = true;
             txtbAlcohol.Visible = true; txtbAlcohol.Enabled = true;
         }
 
@@ -134,6 +161,5 @@ namespace DespachadorDeLiquidos
             }
         }
         #endregion
-
     }
 }
