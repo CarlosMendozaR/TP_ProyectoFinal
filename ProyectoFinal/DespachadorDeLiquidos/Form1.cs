@@ -105,7 +105,7 @@ namespace DespachadorDeLiquidos
         }
         public void MostrarParaPersonalizado()
         {
-            label8.Visible = true;
+            label8.Visible = true; label8.Text = "Ingresa la cantidad que desees [ml]";
             label4.Visible = true; 
             label5.Visible = true;
             label6.Visible = true;
@@ -130,13 +130,13 @@ namespace DespachadorDeLiquidos
         }
         public void MostrarParaHielos()
         { 
-            label8.Visible=true;
+            label8.Visible=true; label8.Text = "Ingresa la cantidad de hielos que deseas";
             label7.Visible = true; label7.Location = new Point(49, 76);
             txtbHielos.Visible = true; txtbHielos.Enabled = true; txtbHielos.Location = new Point(142, 74);
         }
         public void MostrarParaShot()
         {
-            label8.Visible = true;
+            label8.Visible = true; label8.Text="Ingresa la cantidad que desees [ml]";
             label4.Visible = true;
             txtbAlcohol.Visible = true; txtbAlcohol.Enabled = true;
         }
