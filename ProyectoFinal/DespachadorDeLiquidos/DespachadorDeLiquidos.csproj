@@ -38,9 +38,16 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bebida.cs" />
+    <Compile Include="Bienvenida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bienvenida.Designer.cs">
+      <DependentUpon>Bienvenida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -49,6 +56,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Bienvenida.resx">
+      <DependentUpon>Bienvenida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -60,6 +70,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -73,6 +84,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\descarga.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\descarga %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\orig_200432.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\Summer-alcoholic-beverages-beer-mugs_3840x2160.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\background-2045379__340.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\Captura.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\Captura1.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\Captura3.JPG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

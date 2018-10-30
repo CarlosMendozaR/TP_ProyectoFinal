@@ -1,6 +1,6 @@
 ﻿namespace DespachadorDeLiquidos
 {
-    partial class Form1
+    partial class Menu
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gpbMenu = new System.Windows.Forms.GroupBox();
             this.lbHielo = new System.Windows.Forms.Label();
             this.lbMas3 = new System.Windows.Forms.Label();
@@ -56,12 +58,22 @@
             this.txtbAlcohol = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnServir = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.gpbMenu.SuspendLayout();
             this.gpbPorcion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // gpbMenu
             // 
+            this.gpbMenu.BackColor = System.Drawing.Color.Transparent;
+            this.gpbMenu.BackgroundImage = global::DespachadorDeLiquidos.Properties.Resources.Captura11;
+            this.gpbMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.gpbMenu.Controls.Add(this.lbHielo);
             this.gpbMenu.Controls.Add(this.lbMas3);
             this.gpbMenu.Controls.Add(this.lbAgua);
@@ -76,9 +88,11 @@
             this.gpbMenu.Controls.Add(this.label2);
             this.gpbMenu.Controls.Add(this.label1);
             this.gpbMenu.Controls.Add(this.cmbBebida);
-            this.gpbMenu.Location = new System.Drawing.Point(31, 32);
+            this.gpbMenu.Cursor = System.Windows.Forms.Cursors.Default;
+            this.gpbMenu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gpbMenu.Location = new System.Drawing.Point(12, 41);
             this.gpbMenu.Name = "gpbMenu";
-            this.gpbMenu.Size = new System.Drawing.Size(461, 251);
+            this.gpbMenu.Size = new System.Drawing.Size(469, 259);
             this.gpbMenu.TabIndex = 0;
             this.gpbMenu.TabStop = false;
             this.gpbMenu.Text = "Menú";
@@ -238,6 +252,9 @@
             // 
             // gpbPorcion
             // 
+            this.gpbPorcion.BackColor = System.Drawing.Color.Transparent;
+            this.gpbPorcion.BackgroundImage = global::DespachadorDeLiquidos.Properties.Resources.Captura1;
+            this.gpbPorcion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.gpbPorcion.Controls.Add(this.label8);
             this.gpbPorcion.Controls.Add(this.cmbPorcion);
             this.gpbPorcion.Controls.Add(this.txtbHielos);
@@ -249,6 +266,7 @@
             this.gpbPorcion.Controls.Add(this.txtbRefresco);
             this.gpbPorcion.Controls.Add(this.txtbAlcohol);
             this.gpbPorcion.Controls.Add(this.label3);
+            this.gpbPorcion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.gpbPorcion.Location = new System.Drawing.Point(498, 32);
             this.gpbPorcion.Name = "gpbPorcion";
             this.gpbPorcion.Size = new System.Drawing.Size(357, 251);
@@ -360,36 +378,61 @@
             // 
             // btnServir
             // 
-            this.btnServir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnServir.Location = new System.Drawing.Point(445, 330);
+            this.btnServir.BackgroundImage = global::DespachadorDeLiquidos.Properties.Resources.background_2045379__340;
+            this.btnServir.Font = new System.Drawing.Font("Maiandra GD", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnServir.ForeColor = System.Drawing.Color.Gold;
+            this.btnServir.Location = new System.Drawing.Point(536, 381);
             this.btnServir.Name = "btnServir";
-            this.btnServir.Size = new System.Drawing.Size(343, 79);
+            this.btnServir.Size = new System.Drawing.Size(272, 95);
             this.btnServir.TabIndex = 2;
             this.btnServir.Text = "Servir bebida";
             this.btnServir.UseVisualStyleBackColor = true;
             this.btnServir.Click += new System.EventHandler(this.btnServir_Click);
             // 
-            // Form1
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DespachadorDeLiquidos.Properties.Resources.Summer_alcoholic_beverages_beer_mugs_3840x2160;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(897, 564);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(890, 556);
-            this.Controls.Add(this.btnServir);
-            this.Controls.Add(this.gpbPorcion);
             this.Controls.Add(this.gpbMenu);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Controls.Add(this.gpbPorcion);
+            this.Controls.Add(this.btnServir);
+            this.Controls.Add(this.pictureBox1);
+            this.Name = "Menu";
+            this.Text = "Menu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.gpbMenu.ResumeLayout(false);
             this.gpbMenu.PerformLayout();
             this.gpbPorcion.ResumeLayout(false);
             this.gpbPorcion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
+        private System.Windows.Forms.Button btnServir;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox gpbMenu;
+        private System.Windows.Forms.Label lbHielo;
+        private System.Windows.Forms.Label lbMas3;
+        private System.Windows.Forms.Label lbAgua;
+        private System.Windows.Forms.Label lbMas2;
+        private System.Windows.Forms.Label lbRefresco;
+        private System.Windows.Forms.Label lbMas1;
+        private System.Windows.Forms.Label lbAlcohol;
         private System.Windows.Forms.RadioButton rdbPersonalizado;
         private System.Windows.Forms.RadioButton rdbShot;
         private System.Windows.Forms.RadioButton rdbSoloHielo;
@@ -398,6 +441,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbBebida;
         private System.Windows.Forms.GroupBox gpbPorcion;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cmbPorcion;
+        private System.Windows.Forms.TextBox txtbHielos;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -405,18 +452,6 @@
         private System.Windows.Forms.TextBox txtbRefresco;
         private System.Windows.Forms.TextBox txtbAlcohol;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cmbPorcion;
-        private System.Windows.Forms.TextBox txtbHielos;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lbHielo;
-        private System.Windows.Forms.Label lbMas3;
-        private System.Windows.Forms.Label lbAgua;
-        private System.Windows.Forms.Label lbMas2;
-        private System.Windows.Forms.Label lbRefresco;
-        private System.Windows.Forms.Label lbMas1;
-        private System.Windows.Forms.Label lbAlcohol;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnServir;
     }
 }
 

@@ -1,23 +1,27 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
 
 namespace DespachadorDeLiquidos
 {
-    public partial class Form1 : Form
+    public partial class Menu : Form
     {
         Bebida nuevaBebida;
         ArrayList ListaDeBebidas;
+        Queue<Bebida> ColaBebidas = new Queue<Bebida>();
         string[] porciones = {"10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%"};
 
         #region Constructor
-        public Form1()
+        public Menu()
         {
             InitializeComponent();
             ListaDeBebidas = new ArrayList();
             ListaDeBebidas.Add(new Bebida("Ron Blanco", "Coca Cola", -1, -1, -1, 5));
             ListaDeBebidas.Add(new Bebida("Tequila", "Squirt", -1, -1, -1, 2));
+            ListaDeBebidas.Add(new Bebida("Bacardi", "Coca Cola", -1, -1, -1, 3));
+            ListaDeBebidas.Add(new Bebida("Absolut Vodka", "Jugo", -1, -1, -1, 3));
             foreach (Bebida copa in ListaDeBebidas)
             {
                 cmbBebida.Items.Add(copa.Alcohol);
@@ -70,21 +74,33 @@ namespace DespachadorDeLiquidos
         }
         private void btnServir_Click(object sender, EventArgs e)
         {
-            if (rdbCombinado.Checked)
+            try
             {
-                Bebida cubebibi = new Bebida(nuevaBebida.Alcohol, nuevaBebida.Refresco, int.Parse(txtbAlcohol.Text), int.Parse(txtbRefresco.Text), int.Parse(txtbAguaMineral.Text), byte.Parse(txtbHielos.Text));
+                if (rdbCombinado.Checked)
+                {
+                    ColaBebidas.Enqueue(new Bebida(nuevaBebida.Alcohol, nuevaBebida.Refresco, int.Parse(txtbAlcohol.Text), int.Parse(txtbRefresco.Text), int.Parse(txtbAguaMineral.Text), byte.Parse(txtbHielos.Text)));
+                    MessageBox.Show("Cubeibi en cola de preparacion");
+                }
+                else if (rdbSoloHielo.Checked)
+                {
+                    ColaBebidas.Enqueue(new Bebida(nuevaBebida.Alcohol, "Sin refresco", 100, 0, 0, byte.Parse(txtbHielos.Text)));
+                    MessageBox.Show("A las rocas en cola de preparacion");
+                }
+                else if (rdbShot.Checked)
+                {
+                    ColaBebidas.Enqueue(new Bebida(nuevaBebida.Alcohol, "Sin refresco", int.Parse(txtbAlcohol.Text), 0, 0, 0));
+                    MessageBox.Show("Shot en cola de preparacion");
+                }
+                else if (rdbPersonalizado.Checked)
+                {
+                    ColaBebidas.Enqueue(new Bebida(nuevaBebida.Alcohol, nuevaBebida.Refresco, int.Parse(txtbAlcohol.Text), int.Parse(txtbRefresco.Text), int.Parse(txtbAguaMineral.Text), byte.Parse(txtbHielos.Text)));
+                    MessageBox.Show("Bebida personalizada en cola de preparacion");
+                }
+                errorProvider1.Clear();
             }
-            else if (rdbSoloHielo.Checked)
+            catch (FormatException)
             {
-                Bebida aLasRocas = new Bebida(nuevaBebida.Alcohol, "Sin refresco", 100, 0, 0, byte.Parse(txtbHielos.Text));
-            }
-            else if (rdbShot.Checked)
-            {
-                Bebida shot = new Bebida(nuevaBebida.Alcohol, "Sin refresco", int.Parse(txtbAlcohol.Text), 0, 0, 0);
-            }
-            else if (rdbPersonalizado.Checked)
-            {
-                Bebida personalizada = new Bebida(nuevaBebida.Alcohol, nuevaBebida.Refresco, int.Parse(txtbAlcohol.Text), int.Parse(txtbRefresco.Text), int.Parse(txtbAguaMineral.Text), byte.Parse(txtbHielos.Text));
+                errorProvider1.SetError(btnServir, "Rellene los campos necesarios");
             }
         }
 
@@ -161,5 +177,11 @@ namespace DespachadorDeLiquidos
             }
         }
         #endregion
+
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Bienvenida bienvenida = new Bienvenida();
+            bienvenida.Show();
+        }
     }
 }
