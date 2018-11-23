@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gpbMenu = new System.Windows.Forms.GroupBox();
-            this.lbHielo = new System.Windows.Forms.Label();
-            this.lbMas3 = new System.Windows.Forms.Label();
             this.lbAgua = new System.Windows.Forms.Label();
             this.lbMas2 = new System.Windows.Forms.Label();
             this.lbRefresco = new System.Windows.Forms.Label();
@@ -40,7 +38,6 @@
             this.lbAlcohol = new System.Windows.Forms.Label();
             this.rdbPersonalizado = new System.Windows.Forms.RadioButton();
             this.rdbShot = new System.Windows.Forms.RadioButton();
-            this.rdbSoloHielo = new System.Windows.Forms.RadioButton();
             this.rdbCombinado = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,8 +45,6 @@
             this.gpbPorcion = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbPorcion = new System.Windows.Forms.ComboBox();
-            this.txtbHielos = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -74,8 +69,6 @@
             this.gpbMenu.BackColor = System.Drawing.Color.Transparent;
             this.gpbMenu.BackgroundImage = global::DespachadorDeLiquidos.Properties.Resources.Captura11;
             this.gpbMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.gpbMenu.Controls.Add(this.lbHielo);
-            this.gpbMenu.Controls.Add(this.lbMas3);
             this.gpbMenu.Controls.Add(this.lbAgua);
             this.gpbMenu.Controls.Add(this.lbMas2);
             this.gpbMenu.Controls.Add(this.lbRefresco);
@@ -83,7 +76,6 @@
             this.gpbMenu.Controls.Add(this.lbAlcohol);
             this.gpbMenu.Controls.Add(this.rdbPersonalizado);
             this.gpbMenu.Controls.Add(this.rdbShot);
-            this.gpbMenu.Controls.Add(this.rdbSoloHielo);
             this.gpbMenu.Controls.Add(this.rdbCombinado);
             this.gpbMenu.Controls.Add(this.label2);
             this.gpbMenu.Controls.Add(this.label1);
@@ -96,28 +88,6 @@
             this.gpbMenu.TabIndex = 0;
             this.gpbMenu.TabStop = false;
             this.gpbMenu.Text = "Menú";
-            // 
-            // lbHielo
-            // 
-            this.lbHielo.AutoSize = true;
-            this.lbHielo.Location = new System.Drawing.Point(85, 210);
-            this.lbHielo.Name = "lbHielo";
-            this.lbHielo.Size = new System.Drawing.Size(47, 17);
-            this.lbHielo.TabIndex = 13;
-            this.lbHielo.Text = "Hielos";
-            this.lbHielo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbHielo.Visible = false;
-            // 
-            // lbMas3
-            // 
-            this.lbMas3.AutoSize = true;
-            this.lbMas3.Location = new System.Drawing.Point(99, 193);
-            this.lbMas3.Name = "lbMas3";
-            this.lbMas3.Size = new System.Drawing.Size(16, 17);
-            this.lbMas3.TabIndex = 12;
-            this.lbMas3.Text = "+";
-            this.lbMas3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbMas3.Visible = false;
             // 
             // lbAgua
             // 
@@ -189,7 +159,7 @@
             // rdbShot
             // 
             this.rdbShot.AutoSize = true;
-            this.rdbShot.Location = new System.Drawing.Point(289, 128);
+            this.rdbShot.Location = new System.Drawing.Point(289, 110);
             this.rdbShot.Name = "rdbShot";
             this.rdbShot.Size = new System.Drawing.Size(58, 21);
             this.rdbShot.TabIndex = 5;
@@ -197,18 +167,6 @@
             this.rdbShot.Text = "Shot";
             this.rdbShot.UseVisualStyleBackColor = true;
             this.rdbShot.CheckedChanged += new System.EventHandler(this.rdbShot_CheckedChanged);
-            // 
-            // rdbSoloHielo
-            // 
-            this.rdbSoloHielo.AutoSize = true;
-            this.rdbSoloHielo.Location = new System.Drawing.Point(289, 97);
-            this.rdbSoloHielo.Name = "rdbSoloHielo";
-            this.rdbSoloHielo.Size = new System.Drawing.Size(91, 21);
-            this.rdbSoloHielo.TabIndex = 4;
-            this.rdbSoloHielo.TabStop = true;
-            this.rdbSoloHielo.Text = "Solo hielo";
-            this.rdbSoloHielo.UseVisualStyleBackColor = true;
-            this.rdbSoloHielo.CheckedChanged += new System.EventHandler(this.rdbSoloHielo_CheckedChanged);
             // 
             // rdbCombinado
             // 
@@ -257,8 +215,6 @@
             this.gpbPorcion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.gpbPorcion.Controls.Add(this.label8);
             this.gpbPorcion.Controls.Add(this.cmbPorcion);
-            this.gpbPorcion.Controls.Add(this.txtbHielos);
-            this.gpbPorcion.Controls.Add(this.label7);
             this.gpbPorcion.Controls.Add(this.label6);
             this.gpbPorcion.Controls.Add(this.label5);
             this.gpbPorcion.Controls.Add(this.label4);
@@ -293,24 +249,6 @@
             this.cmbPorcion.TabIndex = 7;
             this.cmbPorcion.Visible = false;
             this.cmbPorcion.SelectedIndexChanged += new System.EventHandler(this.cmbPorcion_SelectedIndexChanged);
-            // 
-            // txtbHielos
-            // 
-            this.txtbHielos.Location = new System.Drawing.Point(190, 175);
-            this.txtbHielos.Name = "txtbHielos";
-            this.txtbHielos.Size = new System.Drawing.Size(100, 22);
-            this.txtbHielos.TabIndex = 2;
-            this.txtbHielos.Visible = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(65, 178);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 17);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Hielos";
-            this.label7.Visible = false;
             // 
             // label6
             // 
@@ -426,8 +364,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox gpbMenu;
-        private System.Windows.Forms.Label lbHielo;
-        private System.Windows.Forms.Label lbMas3;
         private System.Windows.Forms.Label lbAgua;
         private System.Windows.Forms.Label lbMas2;
         private System.Windows.Forms.Label lbRefresco;
@@ -435,7 +371,6 @@
         private System.Windows.Forms.Label lbAlcohol;
         private System.Windows.Forms.RadioButton rdbPersonalizado;
         private System.Windows.Forms.RadioButton rdbShot;
-        private System.Windows.Forms.RadioButton rdbSoloHielo;
         private System.Windows.Forms.RadioButton rdbCombinado;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -443,8 +378,6 @@
         private System.Windows.Forms.GroupBox gpbPorcion;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbPorcion;
-        private System.Windows.Forms.TextBox txtbHielos;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;

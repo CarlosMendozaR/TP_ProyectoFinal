@@ -10,7 +10,6 @@ namespace DespachadorDeLiquidos
         private int cantidadAlcohol;
         private int cantidadRefresco;
         private int cantidadAgua;
-        private byte hielos;
         #endregion
 
         #region Propiedades
@@ -62,32 +61,16 @@ namespace DespachadorDeLiquidos
                 }
             }
         }
-        public byte Hielos
-        {
-            get => hielos;
-            set
-            {
-                if (value > 20 || value < 1)
-                {
-                    hielos = 4;
-                }
-                else
-                {
-                    hielos = value;
-                }
-            }
-        }
         #endregion
 
         #region Constructor
-        public Bebida(string alcohol, string refresco, int cantidadAlcohol, int cantidadRefresco, int cantidadAgua, byte hielos)
+        public Bebida(string alcohol, string refresco, int cantidadAlcohol, int cantidadRefresco, int cantidadAgua)
         {
             Alcohol = alcohol;
             Refresco = refresco;
             CantidadAlcohol = cantidadAlcohol;
             CantidadRefresco = cantidadRefresco;
             CantidadAgua = cantidadAgua;
-            Hielos = hielos;
         }
         #endregion
     }
