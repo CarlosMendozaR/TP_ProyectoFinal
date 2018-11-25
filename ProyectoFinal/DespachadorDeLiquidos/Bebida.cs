@@ -2,7 +2,7 @@
 
 namespace DespachadorDeLiquidos
 {
-    class Bebida
+    public class Bebida
     {
         #region Atributos
         private string alcohol;

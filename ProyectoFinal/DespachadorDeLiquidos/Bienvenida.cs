@@ -12,6 +12,7 @@ namespace DespachadorDeLiquidos
     public partial class Bienvenida : Form
     {
         SerialPort serialPort;
+        int bandera=0;
 
         public Bienvenida()
         {
@@ -22,16 +23,20 @@ namespace DespachadorDeLiquidos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                    this.Hide();
-                    Menu ventana = new Menu(serialPort);
-                    ventana.Show();
-            }
-            catch (IOException error)
-            {
-                MessageBox.Show(error.Message);
-            }
+            //try
+            //{
+                //if (bandera == 0)
+                //{
+                 //   throw new ApplicationException("Debes realizar primero la conexion");
+                //}
+                this.Hide();
+                Menu ventana = new Menu(serialPort);
+                ventana.Show();
+            //}
+            //catch (ApplicationException error)
+            //{
+              //  MessageBox.Show(error.Message);
+            //}
 
         }
 
@@ -71,6 +76,7 @@ namespace DespachadorDeLiquidos
             {
                 serialPort.Open();
                 MessageBox.Show("Conexion establecida");
+                bandera = 1;
             }
             catch (IOException error)
             {

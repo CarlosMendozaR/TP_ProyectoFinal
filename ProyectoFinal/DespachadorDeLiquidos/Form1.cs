@@ -14,6 +14,7 @@ namespace DespachadorDeLiquidos
         //Conexion
         SerialPort serialPort;
         byte fin;
+        int contadorBombas = 0;
 
         Bebida nuevaBebida;
         ArrayList ListaDeBebidas;
@@ -24,6 +25,7 @@ namespace DespachadorDeLiquidos
         public Menu(SerialPort serialPort)
         {
             this.serialPort = serialPort;
+            serialPort.DataReceived += new SerialDataReceivedEventHandler(ContadorBombas);
 
             InitializeComponent();
             ListaDeBebidas = new ArrayList();
@@ -83,27 +85,39 @@ namespace DespachadorDeLiquidos
         {
             try
             {
+                fin = 0;
+                if(fin == 1)
+                {
+                    throw new ApplicationException("Espera a que se termine la bebida");
+                }
                 if (rdbCombinado.Checked)
                 {
                     ColaBebidas.Enqueue(new Bebida(nuevaBebida.Alcohol, nuevaBebida.Refresco, int.Parse(txtbAlcohol.Text), int.Parse(txtbRefresco.Text), int.Parse(txtbAguaMineral.Text)));
-                    MessageBox.Show("Cubeibi en cola de preparacion");
                 }
                 else if (rdbShot.Checked)
                 {
                     ColaBebidas.Enqueue(new Bebida(nuevaBebida.Alcohol, "Sin refresco", int.Parse(txtbAlcohol.Text), 0, 0));
-                    MessageBox.Show("Shot en cola de preparacion");
                 }
                 else if (rdbPersonalizado.Checked)
                 {
                     ColaBebidas.Enqueue(new Bebida(nuevaBebida.Alcohol, nuevaBebida.Refresco, int.Parse(txtbAlcohol.Text), int.Parse(txtbRefresco.Text), int.Parse(txtbAguaMineral.Text)));
-                    MessageBox.Show("Bebida personalizada en cola de preparacion");
                 }
                 errorProvider1.Clear();
+                fin = ServirBebida(ColaBebidas.Dequeue());
+            }
+            catch (ApplicationException error)
+            {
+                MessageBox.Show(error.Message);
             }
             catch (FormatException)
             {
                 errorProvider1.SetError(btnServir, "Rellene los campos necesarios");
             }
+        }
+
+        public void ContadorBombas(object sender, EventArgs e)
+        {
+            contadorBombas++;
         }
 
         #endregion
@@ -166,6 +180,46 @@ namespace DespachadorDeLiquidos
                     ((ComboBox)cont).Visible = false;
                 }
             }
+        }
+
+        public byte ServirBebida(Bebida miBebida)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+            for (int i = 0; i < 2; i++)
+            {
+                switch (contadorBombas)
+                {
+                    case 0:
+                        int[] bomba1 = { 1, 1, miBebida.CantidadAlcohol };
+                        for (int j = 0; j < 2; j++)
+                        {
+                            serialPort.Write(bomba1[i].ToString());
+                        }
+                        Thread.Sleep(1000);
+                        break;
+
+                    case 1:
+                        int[] bomba2 = { 1, 2, miBebida.CantidadRefresco };
+                        for (int j = 0; j < 2; j++)
+                        {
+                            serialPort.Write(bomba2[i].ToString());
+                        }
+                        Thread.Sleep(1000);
+                        break;
+                    case 2:
+                        int[] bomba3 = { 1, 3, miBebida.CantidadAgua };
+                        for (int j = 0; j < 2; j++)
+                        {
+                            serialPort.Write(bomba3[i].ToString());
+                        }
+                        Thread.Sleep(1000);
+                        break;
+                }
+            }
+            contadorBombas = 0;
+            form2.Hide();
+            return 1;
         }
         #endregion
 
